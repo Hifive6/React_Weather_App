@@ -1,38 +1,42 @@
 .App {
   text-align: center;
+  color: rgb(2, 32, 96);
+  font-weight: 900;
+  text-shadow: 2px 2px rgb(205, 127, 11);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-secondary {
+  background-image: url(./images/seasonTrees.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-bottom: 0px;
+  padding: 45px;
+  opacity: .9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.formBox {
+  border: 2px solid rgb(205, 127, 11);
+  padding: 10px;
+  background: rgb(2, 32, 96);
+  margin-top: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.inputBox {
+  padding: 8px;
+  width: 90%
 }
 
-.App-link {
-  color: #61dafb;
+.infoBox {
+  margin-top: 2em;
+  border: 2px solid rgb(2,32, 96);
+  padding: 100px
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+

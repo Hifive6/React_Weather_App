@@ -1,17 +1,27 @@
 import React, {Component} from 'react';
+import 'bootswatch/dist/sandstone/bootstrap.min.css'
 import './App.css';
 
 class App extends Component {
-  
-    state = {};
+  constructor(){
+    super();
+    this.state = {
+      temperature: undefined,
+      forecast: undefined,
+      feels_like: undefined,
+      name: undefined,
+      error: false
+    };
 
-    getWeather = (e) => {
+  }
+
+    getWeather = async e => {
       e.preventDefault();
       let zipcode = e.target.value
       
       //  this.setState({[e.target.zipcode]: e.target.value})
       // console.log(zipcode)
-      
+      if(zipcode){
       fetch(
       'https://api.openweathermap.org/data/2.5/weather?zip=' + zipcode + ',us&appid=' + process.env.REACT_APP_OW_API + '&units=imperial') 
       .then(
@@ -19,7 +29,7 @@ class App extends Component {
           if (response.status !== 200) {
             console.log('Looks like there was a problem. Status Code: ' +
               response.status);
-            let errorMessage = "Please add a valid Zipcode"
+            
             
             return;
           }
@@ -31,27 +41,31 @@ class App extends Component {
               console.log('valid zipcode')
             // } else {
             this.setState({
-                  temperature: data.main.temp,
-                  forecast: data.weather[0].main,
-                  feels_like: data.main.feels_like,
+                  temperature: "Todays Tempearture is going to be " + data.main.temp + '°F',
+                  forecast: 'The Local forecast will be ' + data.weather[0].main ,
+                  feels_like: 'It feels like ' + data.main.feels_like + '°F',
                   name:data.name,
                   
             
                 })
-              // }
-          // this.getTime()
+              
           })
         })
       )
       
     
-      .catch(function(err) {
-        console.log('Fetch Error :-S', err);
-        this.setState({
-          error:true
-        })
-      });
-    // this.onChange = this.onChange.bind(this);
+      // .catch(function(err) {
+      //   console.log('Fetch Error :-S', err);
+      //   this.setState({
+      //     error: true
+      //   })
+      // });
+    } else {
+      this.setState({
+        error: true
+      })
+    }
+    
     
   }
 
@@ -62,11 +76,12 @@ class App extends Component {
     return (
       <div className="App">
     
-    <h1>Your Weather </h1>
+    <h1 className='bg-secondary'>Your Weather </h1>
     <div>
-      <form>
+      <form className='formBox'>
         <div>{this.error ? error() : ''}</div>
       <input 
+      className='inputBox'
       type='text'
       value={this.state.value}
       onChange={this.getWeather} 
@@ -75,7 +90,7 @@ class App extends Component {
       </form>
     </div>
 
-    <div>
+    <div className='infoBox'>
       <h2 id="name">{this.state.name}</h2>
       <div id="temperature">{this.state.temperature}</div>
       <div id="forcast">{this.state.feels_like}</div>
