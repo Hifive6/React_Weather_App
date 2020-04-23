@@ -47,28 +47,32 @@ class App extends Component {
     
       .catch(function(err) {
         console.log('Fetch Error :-S', err);
+        this.setState({
+          error:true
+        })
       });
     // this.onChange = this.onChange.bind(this);
     
   }
-    
-    
-    
+
+  
+  
+  
   render() {
-  return (
-    <div className="App">
+    return (
+      <div className="App">
     
     <h1>Your Weather </h1>
     <div>
+      <form>
+        <div>{this.error ? error() : ''}</div>
       <input 
       type='text'
       value={this.state.value}
       onChange={this.getWeather} 
       placeholder='Enter Zipcode'>
       </input>
-      {/* <button 
-      onClick={this.onClick}
-      >Search ZipCode</button> */}
+      </form>
     </div>
 
     <div>
@@ -83,8 +87,15 @@ class App extends Component {
     </div>
     )
   };
- 
- }
+  
+}
+    const error = () => {
+      return (
+    <div role='alert'>
+      Please Enter Valid ZipCode...!
+    </div>
+      )
+    }
 
 
 
