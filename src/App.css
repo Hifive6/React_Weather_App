@@ -31,9 +31,12 @@
 }
 
 .infoBox {
-  margin-top: 2em;
-  border: 2px solid rgb(2,32, 96);
-  padding: 100px
+  padding: 10em;
+}
+
+#name {
+  font-size: 60px;
+  color: black;
 }
 
 
