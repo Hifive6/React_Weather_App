@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slurpees Jams</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom style for font -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Main container for the entire page -->
+    <div class="p-4">
+
+        <!-- Header section with a brand color and rounded corners -->
+        <header class="bg-red-700 text-white p-6 rounded-xl shadow-lg mb-8">
+            <!-- Title of the store -->
+            <h1 class="text-4xl sm:text-5xl font-bold text-center tracking-wide">Slurpees Jams</h1>
+            
+            <!-- Navigation Bar with centered links -->
+            <nav class="mt-4">
+                <ul class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6 text-lg">
+                    <li><a href="#" class="hover:text-red-200 transition-colors duration-300">About Us</a></li>
+                    <li><a href="#" class="hover:text-red-200 transition-colors duration-300">Products</a></li>
+                    <li><a href="#" class="hover:text-red-200 transition-colors duration-300">Slurpees Pictures</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main content area, centered on the page -->
+        <main class="container mx-auto">
+            <!-- Hero section to welcome visitors -->
+            <section class="bg-white p-8 rounded-xl shadow-lg text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-red-800">Welcome to Our Jam-tastic World!</h2>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+                    At Slurpees Jams, we craft delicious, all-natural jams and jellies using the freshest fruits and a whole lot of love. From classic strawberry to exotic mango, every jar is a burst of flavor waiting to be discovered. Explore our world of sweet creations!
+                </p>
+
+                <!-- Container for the three jam images -->
+                <div class="flex flex-col md:flex-row justify-center items-center mt-6 space-y-4 md:space-y-0 md:space-x-6">
+                    <!-- Image and details for Strawberry Jam -->
+                    <div class="w-full md:w-1/3 text-center">
+                        <a href="#" class="block transition-transform duration-300 hover:scale-105 cursor-pointer">
+                            <img src="https://placehold.co/400x300/F87171/ffffff?text=Strawberry+Jam" alt="A jar of delicious Strawberry Jam" class="rounded-xl shadow-md w-full">
+                            <!-- Product details -->
+                            <div class="mt-4 p-3 bg-red-100 rounded-lg shadow-inner">
+                                <p class="text-xl font-bold text-red-800">$5.99</p>
+                                <p class="text-sm text-red-600">Made with fresh strawberries!</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Image for Grape Jelly, now a clickable link -->
+                    <div class="w-full md:w-1/3 text-center">
+                        <a href="#" class="block transition-transform duration-300 hover:scale-105 cursor-pointer">
+                            <img src="https://placehold.co/400x300/8B5CF6/ffffff?text=Grape+Jelly" alt="A jar of sweet Grape Jelly" class="rounded-xl shadow-md w-full">
+                            <!-- Product details -->
+                            <div class="mt-4 p-3 bg-purple-100 rounded-lg shadow-inner">
+                                <p class="text-xl font-bold text-purple-800">$4.99</p>
+                                <p class="text-sm text-purple-600">Grapes from a nice sunny hill!</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Image for Honey Jar, now a clickable link -->
+                    <div class="w-full md:w-1/3 text-center">
+                        <a href="#" class="block transition-transform duration-300 hover:scale-105 cursor-pointer">
+                            <img src="https://placehold.co/400x300/FBBF24/ffffff?text=Honey+Jar" alt="A jar of fresh Honey" class="rounded-xl shadow-md w-full">
+                            <!-- Product details -->
+                            <div class="mt-4 p-3 bg-amber-100 rounded-lg shadow-inner">
+                                <p class="text-xl font-bold text-amber-800">$8.99</p>
+                                <p class="text-sm text-amber-600">We have the best frick'n bees!</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>
